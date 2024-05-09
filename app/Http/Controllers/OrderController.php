@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function create()
     {
         $order = new Order();
-        $order->user_id = Auth::id(); // Assuming there is a user_id column in 'orders'
+        $order->user_id = Auth::id(); // there is a user_id column in 'orders'
         $order->total_price = 0;
         $order->save();
 
@@ -44,7 +44,7 @@ class OrderController extends Controller
             'pizza_id' => $pizza->id,
             'size' => $request->size,
             'price' => $price,
-            'quantity' => $request->input('quantity', 1)  // assuming quantity is provided, default to 1
+            'quantity' => $request->input('quantity', 1)  //  quantity is provided, default to 1
         ]);
         $orderItem->save();
     
